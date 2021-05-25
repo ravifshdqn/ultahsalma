@@ -37,6 +37,7 @@ let countDown = new Date('May 26, 2021 00:00:00').getTime(),
         title: 'Selamat Ulang tahun Salma! <i class="fas fa-heart text-danger"></i>',
         text: 'Dilihat sampe akhir yaa!',
         confirmButtonText: `Iya`,
+        background: `url('img/watercolor.png')`,
         footer: 'Sambil rekam layar biar nanti Ravif tau'
       }).then(function(){
         const {
@@ -45,6 +46,7 @@ let countDown = new Date('May 26, 2021 00:00:00').getTime(),
             title: 'Nama Lengkap :',
             input: 'text',
             inputLabel: 'Jangan Lupa diisi dulu!',
+            background: `url('img/watercolor.png')`,
             confirmButtonText: `Iya`,
             showCancelButton: false,
             inputValidator: (value) => {
@@ -60,22 +62,38 @@ let countDown = new Date('May 26, 2021 00:00:00').getTime(),
                 imageHeight: 400,
                 position: 'center',
                 title: 'Selamat Ulang Tahun ' + `${nama}!` + ' <i class="fas fa-heart text-danger"></i>',
+                background: `url('img/watercolor.png')`,
                 showConfirmButton: false,
                 timer: 2000,
                 timerProgressBar: true
               }).then(function(){
                 Swal.fire({
                   text: 'Barakallah Fii Umrik.. Selamat Ulang Tahun ya Salma yang ke-20 tahun. Semoga sehat selalu, Panjang umur, Berkah selalu Rezekinya, Semoga tetap menjadi anak yang sholehah, tambah dewasa, dan bisa menjunjung tinggi derajat kedua orang tua.. Semoga apa yang di inginkan tercapai, Aamiin.. Do\'a terbaik dari Ravif.',
+                  background: `url('img/watercolor.png')`,
                   confirmButtonText: 'Aamiin'
                 }).then(function() {
-                    confetti();
-                    const teks = document.getElementById('teks');
-                    teks.classList.remove('d-none');
-                    setTimeout(function () {
-                      document.body.addEventListener('click', function () {
-                        _slideSatu();
+                    Swal.fire({
+                      imageUrl: 'img/3.jpg',
+                      title: 'Tiup lilinnya yaa <i class="far fa-grin-beam-sweat"></i>',
+                      background: `url('img/watercolor.png')`,
+                      confirmButtonText: 'Iya'
+                    }).then(function(){
+                      Swal.fire({
+                        imageUrl: 'img/4.jpg',
+                        title: 'Potong kuenya dulu <i class="far fa-grin-beam-sweat"></i>',
+                        background: `url('img/watercolor.png')`,
+                        confirmButtonText: 'iya'
+                      }).then(function(){
+                        confetti();
+                        const teks = document.getElementById('teks');
+                        teks.classList.remove('d-none');
+                        setTimeout(function () {
+                          document.body.addEventListener('click', function () {
+                            _slideSatu();
+                          })
+                        });
                       })
-                    });
+                    })
                   });
               });
           });
