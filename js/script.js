@@ -63,8 +63,7 @@ let countDown = new Date('May 26, 2021 00:00:00').getTime(),
                 position: 'center',
                 title: 'Selamat Ulang Tahun ' + `${nama}!` + ' <i class="fas fa-heart text-danger"></i>',
                 background: `url('img/watercolor.png')`,
-                showConfirmButton: false,
-                timer: 2000,
+                confirmButtonText: 'Iya',
                 timerProgressBar: true
               }).then(function(){
                 Swal.fire({
